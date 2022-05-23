@@ -7,7 +7,7 @@ available in the
 following commands
 
 ```shell
-run npm install  # install the required javascript packages
+run npm install --legacy-peer-deps  # install the required javascript packages
 npm install expo-cli --save-dev  # install expo-cli as developer dependency
 npm run start  # start the expo command-line interface
 ```
