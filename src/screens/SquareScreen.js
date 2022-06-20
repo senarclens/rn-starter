@@ -7,8 +7,6 @@ const COLOR_INCREMENT = 15;
 const reducer = (state, action) => {
   // state === { change_red: number, change_green: number, change_blue: number};
   // action === {type: 'change_change_red' || 'change_change_green' || 'change_change_blue', payload: 15 || -15
-  console.log(state);
-  console.log(action);
   switch (action.type) {
     case 'change_red':
       return state.red + action.payload > 255 || state.red + action.amount < 0
