@@ -16,6 +16,7 @@ const reducer = (state, action) => {
 
 const TextScreen = () => {
   const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
   return (<View>
     <Text>Enter Name:</Text>
@@ -26,7 +27,16 @@ const TextScreen = () => {
       value={name}
       onChangeText={(newValue) => setName(newValue)}
     />
-    <Text>My name is {name}</Text>
+    <Text style={styles.text}>My name is {name}</Text>
+
+    <Text>Enter Password:</Text>
+    <TextInput
+      style={styles.input}
+      autoCapitalize="none"
+      value={password}
+      onChangeText={newValue => setPassword(newValue)}
+    />
+    {password.length < 4 ? <Text>Password must be at least 4 characters long</Text> : "" }
   </View>
   );
 };
@@ -36,7 +46,10 @@ const styles = StyleSheet.create({
     margin: 15,
     borderColor: 'black',
     borderWidth: 1
-  }
+  },
+  text: {
+    marginVertical: 20,
+  },
 });
 
 export default TextScreen;
